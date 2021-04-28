@@ -51,7 +51,7 @@ class MediaPart extends StatelessWidget {
                   ),
                   Positioned(
                     top: 8,
-                    right: 16,
+                    right: 8,
                     child: Container(
                       width: 24,
                       height: 24,
