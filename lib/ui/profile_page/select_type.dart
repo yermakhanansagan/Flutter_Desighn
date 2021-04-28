@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/constants/colors.dart';
-import 'package:flutter_app2/constants/constants.dart';
+
 
 class SelectType extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _SelectTypeState extends State<SelectType> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 12),
-      padding: EdgeInsets.only(left: kPadding),
+      padding: const EdgeInsets.only(left: 16),
       child: Column(
         children: [
           Align(

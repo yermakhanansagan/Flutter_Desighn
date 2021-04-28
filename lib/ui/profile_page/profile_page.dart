@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/constants/colors.dart';
-import 'package:flutter_app2/constants/constants.dart';
 
-import 'package:flutter_app2/ui/profile_page/friends_list.dart';
 import 'package:flutter_app2/ui/profile_page/rounded_avatar.dart';
 import 'package:flutter_app2/ui/profile_page/select_type.dart';
-
+import 'package:flutter_app2/ui/profile_page/friends_list.dart';
 import 'media_part.dart';
 
 

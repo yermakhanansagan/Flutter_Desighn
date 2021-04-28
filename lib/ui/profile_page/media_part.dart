@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/constants/colors.dart';
-import 'package:flutter_app2/constants/constants.dart';
+
 
 
 class MediaPart extends StatelessWidget {
@@ -22,7 +22,7 @@ class MediaPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(kPadding),
+      margin: const EdgeInsets.all(16),
       child: Column(
         children: [
           Align(
@@ -38,7 +38,7 @@ class MediaPart extends StatelessWidget {
           GridView.builder(
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            padding: EdgeInsets.symmetric(vertical: kPadding),
+            padding: const EdgeInsets.symmetric(vertical: 16),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3, crossAxisSpacing: 17, mainAxisSpacing: 14),
             itemCount: imgs.length,

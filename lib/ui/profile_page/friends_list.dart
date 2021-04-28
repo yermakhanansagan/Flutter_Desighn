@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/constants/colors.dart';
-import 'package:flutter_app2/constants/constants.dart';
+
 
 class FriendsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: kPadding),
+      margin: const EdgeInsets.only(top: 16),
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(left: kPadding),
+            padding: const EdgeInsets.only(left: 16),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -130,7 +130,7 @@ class FriendsList extends StatelessWidget {
             ],
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: kPadding),
+            margin: const EdgeInsets.symmetric(vertical: 16),
             width: 328,
             height: 36,
             child: OutlinedButton(
