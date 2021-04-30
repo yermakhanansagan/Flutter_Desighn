@@ -46,7 +46,8 @@ class MediaPart extends StatelessWidget {
               return Stack(
                 children: [
                   Container(
-                    child: Image.asset(imgs[index]
+                    child: Image.asset(imgs[index],
+                      fit: BoxFit.cover,
                     ),
                   ),
                   Positioned(
