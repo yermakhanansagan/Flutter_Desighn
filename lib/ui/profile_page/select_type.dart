@@ -46,11 +46,11 @@ class _SelectTypeState extends State<SelectType> {
                     ),
                     decoration: BoxDecoration(
                         color: isSelected == index
-                            ? Color(0xFFF2E7FE)
+                            ? Color(buttonBack)
                             : Color(black).withOpacity(0.08),
                         borderRadius: BorderRadius.circular(68),
                         border: Border.all(
-                          color: isSelected == index ? Color(0xFFDBB2FF) : Color(black).withOpacity(0.08),
+                          color: isSelected == index ? Color(buttonBorder) : Color(black).withOpacity(0.08),
                         )),
                   ),
                   onTap: (){

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/constants/colors.dart';
-
+import 'package:flutter_app2/models/friend.dart';
 
 class FriendsList extends StatelessWidget {
   @override
@@ -18,117 +18,37 @@ class FriendsList extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
-
           ),
-          Column(
-            children: [
-              ListTile(
-                leading: CircleAvatar(
-                  radius: 20,
-                  backgroundImage:
-                      AssetImage("lib/assets/images/friends/corey.png"),
-                ),
-                title: Text(
-                  "Corey George",
-                  style: Theme.of(context).textTheme.subtitle1,
-                ),
-                subtitle: Text(
-                  "Developer",
-                  style: Theme.of(context).textTheme.bodyText2.apply(
-                        color: Color(black).withOpacity(0.6),
-                      ),
-                ),
-                trailing: IconButton(
-                  icon: Image.asset("lib/assets/icons/close_24px_friends.png"),
-                  onPressed: () {},
-                ),
-              ),
-              Divider(
-                indent: 72,
-              )
-            ],
-          ),
-          Column(
-            children: [
-              ListTile(
-                leading: CircleAvatar(
-                  radius: 20,
-                  backgroundImage:
-                      AssetImage("lib/assets/images/friends/ahmad.png"),
-                ),
-                title: Text(
-                  "Ahmad Vetrovs",
-                  style: Theme.of(context).textTheme.subtitle1,
-                ),
-                subtitle: Text(
-                  "Developer",
-                  style: Theme.of(context).textTheme.bodyText2.apply(
-                        color: Color(black).withOpacity(0.6),
-                      ),
-                ),
-                trailing: IconButton(
-                  icon: Image.asset("lib/assets/icons/close_24px_friends.png"),
-                  onPressed: () {},
-                ),
-              ),
-              Divider(
-                indent: 72,
-              )
-            ],
-          ),
-          Column(
-            children: [
-              ListTile(
-                leading: CircleAvatar(
-                  radius: 20,
-                  backgroundImage:
-                      AssetImage("lib/assets/images/friends/christofer.png"),
-                ),
-                title: Text(
-                  "Cristofer Workman",
-                  style: Theme.of(context).textTheme.subtitle1,
-                ),
-                subtitle: Text(
-                  "Developer",
-                  style: Theme.of(context).textTheme.bodyText2.apply(
-                        color: Color(black).withOpacity(0.6),
-                      ),
-                ),
-                trailing: IconButton(
-                  icon: Image.asset("lib/assets/icons/close_24px_friends.png"),
-                  onPressed: () {},
-                ),
-              ),
-              Divider(
-                indent: 72,
-              )
-            ],
-          ),
-          Column(
-            children: [
-              ListTile(
-                leading: CircleAvatar(
-                  radius: 20,
-                  backgroundImage:
-                      AssetImage("lib/assets/images/friends/tiana.png"),
-                ),
-                title: Text(
-                  "Tiana Korsgaard",
-                  style: Theme.of(context).textTheme.subtitle1,
-                ),
-                subtitle: Text(
-                  "Developer",
-                  style: Theme.of(context).textTheme.bodyText2.apply(
-                        color: Color(black).withOpacity(0.6),
-                      ),
-                ),
-                trailing: IconButton(
-                  icon: Image.asset("lib/assets/icons/close_24px_friends.png"),
-                  onPressed: () {},
-                ),
-              ),
-            ],
-          ),
+          ListView.separated(
+              separatorBuilder: (context, index) => Divider(
+                    indent: 72,
+                  ),
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: friends.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    radius: 20,
+                    backgroundImage: AssetImage(friends[index].avatar),
+                  ),
+                  title: Text(
+                    friends[index].name,
+                    style: Theme.of(context).textTheme.subtitle1,
+                  ),
+                  subtitle: Text(
+                    friends[index].position,
+                    style: Theme.of(context).textTheme.bodyText2.apply(
+                          color: Color(black).withOpacity(0.6),
+                        ),
+                  ),
+                  trailing: IconButton(
+                    icon:
+                        Image.asset("lib/assets/icons/close_24px_friends.png"),
+                    onPressed: () {},
+                  ),
+                );
+              }),
           Container(
             margin: const EdgeInsets.symmetric(vertical: 16),
             width: 328,

@@ -8,6 +8,10 @@ const int white = 0xFFFFFFFF;
 const int gray200 = 0xFFF5F5F5;
 const int gray900 = 0xFF121212;
 const int black = 0xFF000000;
+const int buttonBack = 0xFFF2E7FE;
+const int buttonBorder = 0xFFDBB2FF;
+
+
 
 
 
