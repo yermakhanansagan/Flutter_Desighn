@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/constants/colors.dart';
+import 'package:flutter_app2/constants/size_config.dart';
 
 import 'package:flutter_app2/ui/profile_page/rounded_avatar.dart';
 import 'package:flutter_app2/ui/profile_page/select_type.dart';
@@ -15,6 +16,10 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
+
+    SizeConfig().init(context); //  обозначаем использование для парента
+
+
     return Scaffold(
       backgroundColor: Color(white),
       appBar: AppBar(
