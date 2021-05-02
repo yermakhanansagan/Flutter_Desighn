@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/constants/colors.dart';
+import 'package:flutter_app2/constants/size_config.dart';
 
 class MediaPart extends StatelessWidget {
   List<String> imgs = [
@@ -16,7 +17,7 @@ class MediaPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var selectedSize = MediaQuery.of(context).size.width; // использовал только для картинок так как на большом экране они съезжают с места
+
     return Container(
       margin: const EdgeInsets.all(16),
       child: Column(
@@ -39,16 +40,16 @@ class MediaPart extends StatelessWidget {
               return Stack(
                 children: [
                   Container(
-                    height: selectedSize * 0.2685, // умножаю на занимаемое место по отношению к ширине экрана в процентах
-                    width: selectedSize * 0.2685,
+                    height: SizeConfig.screenWidth * 0.2685, // умножаю на занимаемое место по отношению к ширине экрана в процентах
+                    width: SizeConfig.screenWidth * 0.2685,
                     child: Image.asset(
                       imgs[index],
                       fit: BoxFit.cover,
                     ),
                   ),
                   Positioned(
-                    top: selectedSize * 0.022,
-                    right: selectedSize * 0.022,
+                    top: SizeConfig.screenWidth * 0.022,
+                    right: SizeConfig.screenWidth * 0.022,
                     child: Container(
                       width: 24,
                       height: 24,

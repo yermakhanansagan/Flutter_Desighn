@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
+
 import 'package:flutter_app2/constants/colors.dart';
+import 'package:flutter_app2/constants/size_config.dart';
 import 'package:flutter_app2/data/dummy_data.dart';
 
 class FriendsList extends StatelessWidget {
@@ -8,7 +11,7 @@ class FriendsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var selectedSize = MediaQuery.of(context).size.width; //
+
     return Container(
       margin: const EdgeInsets.only(top: 16),
       child: Column(
@@ -55,8 +58,8 @@ class FriendsList extends StatelessWidget {
               }),
           Container(
             margin: const EdgeInsets.symmetric(vertical: 16),
-            width: selectedSize * 0.911,
-            height: selectedSize * 0.1,
+            width: SizeConfig.screenWidth * 0.911,
+            height: SizeConfig.screenWidth * 0.1,
             child: OutlinedButton(
               onPressed: () {},
               child: Row(
