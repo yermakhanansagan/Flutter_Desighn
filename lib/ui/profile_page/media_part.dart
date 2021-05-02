@@ -17,7 +17,6 @@ class MediaPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       margin: const EdgeInsets.all(16),
       child: Column(
@@ -40,7 +39,8 @@ class MediaPart extends StatelessWidget {
               return Stack(
                 children: [
                   Container(
-                    height: SizeConfig.screenWidth * 0.2685, // умножаю на занимаемое место по отношению к ширине экрана в процентах
+                    height: SizeConfig.screenWidth * 0.2685,
+                    // умножаю на занимаемое место по отношению к ширине экрана в процентах
                     width: SizeConfig.screenWidth * 0.2685,
                     child: Image.asset(
                       imgs[index],
@@ -72,7 +72,6 @@ class MediaPart extends StatelessWidget {
             },
           ),
           Row(
-
             children: [
               Expanded(
                 child: ElevatedButton(
@@ -85,7 +84,7 @@ class MediaPart extends StatelessWidget {
                   style: ElevatedButton.styleFrom(primary: Color(violet500)),
                 ),
               ),
-              SizedBox(
+              SizedBox( // использовал так как пока что не понял это https://flutter.io/docs/development/ui/layout/box-constraints#flex
                 width: 16,
               ),
               Expanded(
