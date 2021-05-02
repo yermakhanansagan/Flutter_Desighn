@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/constants/colors.dart';
 
-
-
 class MediaPart extends StatelessWidget {
-
   List<String> imgs = [
     "lib/assets/images/media/media1.png",
     "lib/assets/images/media/media2.png",
@@ -17,10 +14,9 @@ class MediaPart extends StatelessWidget {
     "lib/assets/images/media/media9.png",
   ];
 
-
-
   @override
   Widget build(BuildContext context) {
+    var selectedSize = MediaQuery.of(context).size.width; // использовал только для картинок так как на большом экране они съезжают с места
     return Container(
       margin: const EdgeInsets.all(16),
       child: Column(
@@ -29,10 +25,7 @@ class MediaPart extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               "My media",
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .headline5,
+              style: Theme.of(context).textTheme.headline5,
             ),
           ),
           GridView.builder(
@@ -46,13 +39,16 @@ class MediaPart extends StatelessWidget {
               return Stack(
                 children: [
                   Container(
-                    child: Image.asset(imgs[index],
+                    height: selectedSize * 0.2685, // умножаю на занимаемое место по отношению к ширине экрана в процентах
+                    width: selectedSize * 0.2685,
+                    child: Image.asset(
+                      imgs[index],
                       fit: BoxFit.cover,
                     ),
                   ),
                   Positioned(
-                    top: 8,
-                    right: 8,
+                    top: selectedSize * 0.022,
+                    right: selectedSize * 0.022,
                     child: Container(
                       width: 24,
                       height: 24,
@@ -75,34 +71,30 @@ class MediaPart extends StatelessWidget {
             },
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
             children: [
-              Container(
-                width: 156,
-                height: 36,
+              Expanded(
                 child: ElevatedButton(
                   onPressed: () {},
                   child: Text("DELETE",
-                      style: Theme
-                          .of(context)
+                      style: Theme.of(context)
                           .textTheme
                           .button
                           .apply(color: Color(white))),
                   style: ElevatedButton.styleFrom(primary: Color(violet500)),
                 ),
               ),
-              Container(
-                width: 156,
-                height: 36,
+              SizedBox(
+                width: 16,
+              ),
+              Expanded(
                 child: OutlinedButton(
                   onPressed: () {},
                   child: Text("ADD",
-                      style: Theme
-                          .of(context)
+                      style: Theme.of(context)
                           .textTheme
                           .button
                           .apply(color: Color(violet500))),
-
                 ),
               ),
             ],
